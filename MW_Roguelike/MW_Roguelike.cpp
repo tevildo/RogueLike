@@ -3,7 +3,9 @@
 
 #include "stdafx.h"
 
+#include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
 #include <memory>
 
@@ -13,7 +15,7 @@
 
 bool run = true;
 
-int _tmain(int argc, _TCHAR* argv[])
+int main(int argc, char* argv[])
 {
 	//setup
 	srand( time(NULL) );
@@ -38,7 +40,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		int c = 0;
 		while(!(c == 62 || c == 60))
 		{
-			c = getchar();
+			c = fgetc(stdin);
 
 			if(c == 62) player->Descend();
 			else if(c == 60) player->Ascend();
